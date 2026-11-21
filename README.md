@@ -1,10 +1,11 @@
 # Imran Rasheed — Portfolio
 
-A distinctive, production-grade personal portfolio for **Imran Rasheed**, a Front-End Developer
+A distinctive, production-grade personal portfolio for **Imran Rasheed**, a Full Stack Developer
 with 3+ years of experience building fast, accessible, responsive web applications.
 
-Built with **Next.js** and **Tailwind CSS** in a dark, editorial aesthetic with a lime accent,
-oversized serif typography, a scrolling tech marquee, and scroll-triggered reveal animations.
+Built with **Next.js**, **Three.js** (React Three Fiber) and **Tailwind CSS**: a dark, studio-style showcase with a
+real-time 3D laptop + phone in the hero that cycles through live project screenshots, 3D-tilt device mockups
+for every project, and scroll-triggered reveals.
 
 <p align="left">
   <img alt="Next.js" src="https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
@@ -15,7 +16,8 @@ oversized serif typography, a scrolling tech marquee, and scroll-triggered revea
 
 ## ✨ Features
 
-- **Distinctive design** — dark/lime editorial theme, Fraunces serif display, Hanken Grotesk body, JetBrains Mono accents
+- **3D hero** — WebGL laptop and phone rendered with Three.js, showing real screenshots of shipped projects
+- **Distinctive design** — dark studio theme with an ember accent, Bricolage Grotesque, Instrument Serif, Geist
 - **Fully responsive** — hand-tuned layouts from mobile to desktop
 - **Motion** — staggered scroll reveals, animated tech marquee, micro-interactions (respects `prefers-reduced-motion`)
 - **Accessible & SEO-friendly** — semantic markup, metadata, Open Graph tags
@@ -23,25 +25,28 @@ oversized serif typography, a scrolling tech marquee, and scroll-triggered revea
 
 ## 🗂️ Sections
 
-Hero · Tech marquee · About (with stats) · Selected Work · Toolkit / Skills · Experience · Contact
+Hero (3D) · Tech marquee · Selected Work · About (with stats) · Toolkit · Experience · Contact
 
 ## 🚀 Selected Projects
 
 | Project | Type | Live |
 | --- | --- | --- |
-| YouHook | Peer-to-peer rental marketplace | https://youhook-one.vercel.app/ |
+| YouHook | Peer-to-peer rental marketplace (Next.js + Express API) | https://staging.youhook.com/ |
+| Shopfaymont | E-commerce platform (storefront, admin, API) | https://www.shopfaymont.com/ |
+| Roadster: Reveal | 3D browser game (Three.js + Blender, built with Claude Opus 5) | https://roadster-reveal.vercel.app/ |
+| Job Apply Batch | AI job-application pipeline (Node.js CLI, built with Claude Opus 5) | Private repo |
+| Seekho Khelo | Kids learning game, Unity 6 / Android (built with Claude Opus 5) | Android APK |
+| The Jolly Pops Arcade | Kids arcade app, Unity 6 / iOS + Android (client art, built with Claude Opus 5) | Mobile app |
 | Play Lounge | Venue discovery & booking | https://www.playlounge.city/ |
-| YesJobs | Job board / recruitment | https://yesjobs.com.au/ |
-| Hoy Hoy Ibiza | Hospitality / events | https://hoyhoyibiza.com/ |
-| E-Rec | Recruitment platform | https://e-rec.com.au/ |
-| Brou | Brand / marketing | https://brou.info/ |
+| Hoy Hoy Ibiza | Real estate & concierge | https://hoyhoyibiza.com/ |
 
 ## 🛠️ Tech Stack
 
 **Framework:** Next.js 16 (App Router) · React 19
 **Language:** TypeScript
+**3D:** Three.js · React Three Fiber
 **Styling:** Tailwind CSS 4
-**Fonts:** Fraunces, Hanken Grotesk, JetBrains Mono (`next/font`)
+**Fonts:** Bricolage Grotesque, Instrument Serif, Geist, Geist Mono (`next/font`)
 
 ## 🧑‍💻 Run Locally
 
