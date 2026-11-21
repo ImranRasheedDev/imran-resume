@@ -47,8 +47,8 @@ Hero · Tech marquee · About (with stats) · Selected Work · Toolkit / Skills 
 
 ```bash
 # clone
-git clone https://github.com/ImranRasheedDev/imran-rasheed.git
-cd imran-rasheed
+git clone https://github.com/ImranRasheedDev/imran-rasheed.git imran-resume
+cd imran-resume
 
 # install dependencies
 npm install
