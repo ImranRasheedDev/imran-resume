@@ -116,8 +116,11 @@ function restingPose(wide: boolean, aspect: number, halfTan: number, pos: THREE.
   const cy = 0.85;
   let d: number;
   if (wide) {
-    d = Math.max(W / (aspect * 0.52 * 2 * halfTan), H / (0.72 * 2 * halfTan));
-    target.set(cx - d * halfTan * aspect * 0.46, cy, 0);
+    // very wide viewports (phones held sideways) are height-bound: shrink a little and
+    // pull the devices toward the middle so the phone doesn't run off the right edge
+    const squat = aspect > 1.65;
+    d = Math.max(W / (aspect * (squat ? 0.46 : 0.52) * 2 * halfTan), H / ((squat ? 0.64 : 0.72) * 2 * halfTan));
+    target.set(cx - d * halfTan * aspect * (squat ? 0.36 : 0.46), cy - (squat ? d * halfTan * 0.08 : 0), 0);
   } else {
     const top = Math.min(0.8, heroScroll.copyBottom + 0.02);
     const room = Math.max(0.2, 0.97 - top);
@@ -342,7 +345,9 @@ function Devices({ screens, onIndexChange }: Props) {
     const cam = state.camera as THREE.PerspectiveCamera;
     const aspect = state.size.width / Math.max(1, state.size.height);
     const halfTan = Math.tan(THREE.MathUtils.degToRad(cam.fov / 2));
-    restingPose(state.size.width >= 1024 && aspect >= 1, aspect, halfTan, tmp.pos0, tmp.tgt0);
+    // landscape phones also get the side-by-side layout: there is no room under the copy
+    const wide = (state.size.width >= 1024 && aspect >= 1) || (aspect >= 1.45 && state.size.height < 540);
+    restingPose(wide, aspect, halfTan, tmp.pos0, tmp.tgt0);
     if (z > 0 && screenMesh.current && lid.current) {
       screenMesh.current.getWorldPosition(tmp.tgt1);
       lid.current.getWorldQuaternion(tmp.q);
