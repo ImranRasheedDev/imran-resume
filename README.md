@@ -69,6 +69,15 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 npm run build && npm run start
 ```
 
+### Résumé PDF
+
+The downloadable résumé (`public/Imran-Rasheed-Resume.pdf`) is printed from
+`resume/resume.html` with headless Chrome. After editing the HTML, rebuild it:
+
+```bash
+npm run resume:pdf   # set CHROME=/path/to/chrome if it is not on your PATH
+```
+
 ## ☁️ Deploy
 
 Optimized for [Vercel](https://vercel.com). Import the repo, keep the defaults, and deploy —

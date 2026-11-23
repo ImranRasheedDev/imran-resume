@@ -1,0 +1,353 @@
+<!doctype html>
+<!--
+  Source for public/Imran-Rasheed-Resume.pdf. Rebuild with `npm run resume:pdf`.
+  Keep it in step with src/lib/data.ts (the website) when experience or projects change.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Imran Rasheed — Full Stack Developer</title>
+    <meta name="author" content="Imran Rasheed" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=block"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: A4;
+        margin: 15mm 16mm 14mm;
+      }
+      :root {
+        --ink: #14161a;
+        --body: #3b3f47;
+        --muted: #6b7079;
+        --line: #e4e2dc;
+        --accent: #d4471a; /* the site's ember, darkened for print */
+        --chip: #fbf1ec;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      body {
+        font-family: "Geist", system-ui, sans-serif;
+        font-size: 9.6pt;
+        line-height: 1.5;
+        color: var(--body);
+        background: #fff;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Bricolage Grotesque", "Geist", sans-serif;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+      }
+
+      /* header */
+      header {
+        padding-bottom: 12pt;
+        border-bottom: 1.5pt solid var(--ink);
+      }
+      h1 {
+        font-size: 27pt;
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+      h1 .dot {
+        color: var(--accent);
+      }
+      .title {
+        margin-top: 5pt;
+        font-family: "Geist Mono", monospace;
+        font-size: 9pt;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        word-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3pt 16pt;
+        margin-top: 9pt;
+        font-size: 8.8pt;
+        color: var(--body);
+      }
+      .contact b {
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      /* sections */
+      section {
+        margin-top: 13pt;
+      }
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 8pt;
+        margin-bottom: 7pt;
+        font-size: 11pt;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      h2::after {
+        content: "";
+        flex: 1;
+        height: 0.75pt;
+        background: var(--line);
+      }
+      .summary {
+        color: var(--body);
+      }
+      .summary strong {
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      /* experience */
+      .job + .job {
+        margin-top: 11pt;
+      }
+      .job-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12pt;
+      }
+      .job h3 {
+        font-size: 10.6pt;
+      }
+      .job h3 span {
+        color: var(--accent);
+      }
+      .when {
+        flex-shrink: 0;
+        font-family: "Geist Mono", monospace;
+        font-size: 8.3pt;
+        color: var(--muted);
+      }
+      ul {
+        margin-top: 5pt;
+        padding-left: 12pt;
+      }
+      li {
+        margin-top: 2.6pt;
+        padding-left: 2pt;
+      }
+      li::marker {
+        color: var(--accent);
+      }
+
+      /* projects */
+      .projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10pt 18pt;
+      }
+      .project {
+        break-inside: avoid;
+      }
+      .project-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 8pt;
+      }
+      .project h3 {
+        font-size: 10.2pt;
+      }
+      .tag {
+        flex-shrink: 0;
+        font-family: "Geist Mono", monospace;
+        font-size: 6.9pt;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .project p {
+        margin-top: 2.5pt;
+        font-size: 8.9pt;
+        line-height: 1.45;
+      }
+      .stack {
+        margin-top: 3pt;
+        font-size: 8.2pt;
+        color: var(--muted);
+      }
+      .link {
+        margin-top: 2pt;
+        font-family: "Geist Mono", monospace;
+        font-size: 8pt;
+        color: var(--accent);
+      }
+      .link.muted {
+        color: var(--muted);
+      }
+
+      /* skills */
+      .skills {
+        display: grid;
+        grid-template-columns: 112pt 1fr;
+        gap: 5pt 12pt;
+      }
+      .skills dt {
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .skills dd {
+        color: var(--body);
+      }
+
+      .page-break {
+        break-before: page;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Imran Rasheed<span class="dot">.</span></h1>
+      <div class="title">Full Stack Developer</div>
+      <div class="contact">
+        <span><b>Phone / WhatsApp:</b> <a href="https://wa.me/923351275273">0335-1275273</a></span>
+        <span><b>Email:</b> <a href="mailto:itsimranwebdev@gmail.com">itsimranwebdev@gmail.com</a></span>
+        <span><b>LinkedIn:</b> <a href="https://linkedin.com/in/imran-rasheed-4a332b1b7">in/imran-rasheed</a></span>
+        <span><b>Location:</b> Garden West, Karachi</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary">
+        Full Stack Developer with <strong>5+ years</strong> of experience building fast, accessible and fully
+        responsive web products end to end, from pixel-perfect interfaces to the APIs behind them. I started as a
+        Frontend Developer and have worked full stack since 2022 with <strong>Next.js, React, TypeScript and
+        Node.js</strong>, shipping marketplaces, e-commerce, booking platforms, AI automation and games. I also ship
+        complete projects through <strong>AI engineering with Claude</strong>, from spec and plan to build, tests and
+        debugging.
+      </p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Full Stack Developer · <span>Hashone Digital</span></h3>
+          <span class="when">Feb 2022 – Present · Karachi</span>
+        </div>
+        <ul>
+          <li>Build and maintain full-stack web applications with Next.js and React, from responsive UI to API integration, delivered on client deadlines.</li>
+          <li>Built backend APIs and data layers with Node.js, Express, NestJS, Prisma and MongoDB, including payments, real-time chat and background jobs.</li>
+          <li>Turn Figma and Adobe XD designs into pixel-perfect, fully responsive components.</li>
+          <li>Developed reusable, accessible UI libraries with Shadcn/UI, Tailwind CSS and Bootstrap, which made designs more consistent and sped up delivery.</li>
+          <li>Improve load times, Core Web Vitals and SEO-friendly markup across production sites.</li>
+          <li>Shipped products across marketplace, e-commerce, hospitality and real-estate industries, working closely with designers and project managers.</li>
+          <li>Ship complete projects through AI engineering with Claude Code and Claude Opus 5, from spec and plan to build, tests and debugging, including three games and an AI job-application pipeline.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Frontend Developer · <span>Quadtech Technologies</span></h3>
+          <span class="when">Jan 2021 – Jan 2022</span>
+        </div>
+        <ul>
+          <li>Built responsive, pixel-perfect interfaces from Figma and Adobe XD designs with React, JavaScript, HTML and CSS.</li>
+          <li>Developed reusable UI components and layouts that work consistently across browsers and screen sizes.</li>
+          <li>Integrated frontend screens with REST APIs in close collaboration with backend developers and designers.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Frontend</dt>
+        <dd>Next.js, React.js, TypeScript, JavaScript, Tailwind CSS, Shadcn/UI, TanStack Query, Zustand</dd>
+        <dt>Backend</dt>
+        <dd>Node.js, Express.js, NestJS, Next.js Route Handlers, Server Actions, REST APIs, Socket.io, Zod</dd>
+        <dt>Data &amp; Services</dt>
+        <dd>PostgreSQL, MongoDB, SQLite, Prisma, Mongoose, Redis, BullMQ, Stripe, AWS S3, Claude API</dd>
+        <dt>AI Engineering</dt>
+        <dd>Claude Code, Claude Opus 5, prompt engineering, spec → plan → build, AI-assisted debugging, AI-written test suites, Claude API integration</dd>
+        <dt>Workflow</dt>
+        <dd>Figma / Adobe XD → code, Git &amp; GitHub, Vitest, Storybook, Vercel, Core Web Vitals &amp; SEO</dd>
+      </dl>
+    </section>
+
+    <section class="page-break">
+      <h2>Selected Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <div class="project-head"><h3>YouHook</h3><span class="tag">Rental Marketplace</span></div>
+          <p>Two-sided peer-to-peer marketplace for renting anything: a Next.js web app, an admin dashboard and a TypeScript Express API. Stripe payments and Plaid payouts, Socket.io chat, Redis + BullMQ jobs, AWS S3 uploads and Google Maps search.</p>
+          <div class="stack">Next.js · Express · TypeScript · MongoDB · Redis · Socket.io · Stripe · AWS S3</div>
+          <a class="link" href="https://staging.youhook.com/">staging.youhook.com</a>
+        </div>
+
+        <div class="project">
+          <div class="project-head"><h3>Shopfaymont</h3><span class="tag">E-commerce Platform</span></div>
+          <p>Full e-commerce platform for a watch retailer: storefront, back-office console and API. It started as three separate apps (a NestJS API, an admin console and a storefront), which I merged into one Next.js app.</p>
+          <div class="stack">Next.js · TypeScript · Prisma · PostgreSQL · Redis · Zod · Vitest</div>
+          <a class="link" href="https://www.shopfaymont.com/">shopfaymont.com</a>
+        </div>
+
+        <div class="project">
+          <div class="project-head"><h3>Roadster: Reveal</h3><span class="tag">3D Browser Game</span></div>
+          <p>GTA-style 3D browser game built through prompt-driven development with Claude Opus 5: a showroom, a stunt arena and a 3 × 3 km open world. Procedural Blender models, a physically based sky and custom vehicle physics.</p>
+          <div class="stack">Three.js · WebGL2 · JavaScript · Blender + Python · glTF / GLB · Vercel</div>
+          <a class="link" href="https://roadster-reveal.vercel.app/">roadster-reveal.vercel.app</a>
+        </div>
+
+        <div class="project">
+          <div class="project-head"><h3>Job Apply Batch</h3><span class="tag">AI Automation · CLI</span></div>
+          <p>AI job-application pipeline built with Claude Opus 5. It collects jobs from 14 sources, removes duplicates, scores each job against my profile, writes and sends personalised emails through Gmail, and writes a PDF report.</p>
+          <div class="stack">TypeScript · Node.js · Claude API · Gmail API · SQLite · Zod · Vitest</div>
+          <span class="link muted">Private repository</span>
+        </div>
+
+        <div class="project">
+          <div class="project-head"><h3>Seekho Khelo</h3><span class="tag">Kids Learning Game</span></div>
+          <p>Offline learning game for children aged 3–10 in English and Urdu, built with Claude Opus 5. Kids explore a 3D island with eight activities, from letter tracing and counting to jigsaw puzzles.</p>
+          <div class="stack">Unity 6 · C# · URP · Kenney 3D assets · Text-to-speech · Android</div>
+          <span class="link muted">Android · offline</span>
+        </div>
+
+        <div class="project">
+          <div class="project-head"><h3>The Jolly Pops Arcade</h3><span class="tag">Kids Arcade</span></div>
+          <p>Mobile arcade app for a children's entertainment brand, built with Claude Opus 5 from the client's game proposal and design sheets, with most of the art, animation and music supplied by the client.</p>
+          <div class="stack">Unity 6 · C# · iOS · Android · Python art pipeline · Unit tests</div>
+          <span class="link muted">iOS · Android</span>
+        </div>
+
+        <div class="project">
+          <div class="project-head"><h3>Play Lounge</h3><span class="tag">Venue Booking</span></div>
+          <p>Platform for discovering and booking premium venues for nights out, celebrations and corporate events, with a personal event concierge, search by venue, location and category, and member sign-up.</p>
+          <div class="stack">Next.js · React · Tailwind CSS</div>
+          <a class="link" href="https://www.playlounge.city/">playlounge.city</a>
+        </div>
+
+        <div class="project">
+          <div class="project-head"><h3>Hoy Hoy Ibiza</h3><span class="tag">Real Estate &amp; Concierge</span></div>
+          <p>The online home of an Ibiza real-estate and concierge brand, covering property management, property sales and concierge services, with a blog, a business directory and WhatsApp lead capture.</p>
+          <div class="stack">React · Tailwind CSS · Responsive</div>
+          <a class="link" href="https://hoyhoyibiza.com/">hoyhoyibiza.com</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
