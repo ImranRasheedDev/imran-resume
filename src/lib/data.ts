@@ -269,17 +269,27 @@ export const SKILLS = [
 ];
 
 export const STATS = [
-  { k: "3+", v: "Years shipping production web apps" },
+  { k: "5+", v: "Years shipping production web apps" },
   { k: "7+", v: "Products shipped across 5 industries" },
   { k: "100%", v: "Responsive, desktop to mobile" },
 ];
 
-export const EXPERIENCE = [
+export type Job = {
+  company: string;
+  role: string;
+  period: string;
+  place?: string;
+  current?: boolean;
+  points: string[];
+};
+
+export const EXPERIENCE: Job[] = [
   {
     company: "Hashone Digital",
     role: "Full Stack Developer",
-    period: "Feb 2023 — Present",
+    period: "Feb 2022 — Present",
     place: "Karachi",
+    current: true,
     points: [
       "Build and maintain full-stack web applications with Next.js and React, from responsive UI to API integration, delivered on client deadlines.",
       "Built backend APIs and data layers with Node.js, Express, NestJS, Prisma and MongoDB, including payments, real-time chat and background jobs.",
@@ -287,6 +297,17 @@ export const EXPERIENCE = [
       "Developed reusable, accessible UI libraries with Shadcn/UI, Tailwind CSS and Bootstrap, which made designs more consistent and sped up delivery.",
       "Improve load times, Core Web Vitals and SEO-friendly markup across production sites.",
       "Shipped products across marketplace, e-commerce, hospitality and real-estate industries, working closely with designers and project managers.",
+      "Ship complete projects through AI engineering with Claude Code and Claude Opus 5, from spec and plan to build, tests and debugging, including three games and an AI job-application pipeline.",
+    ],
+  },
+  {
+    company: "Quadtech Technologies",
+    role: "Frontend Developer",
+    period: "Jan 2021 — Jan 2022",
+    points: [
+      "Built responsive, pixel-perfect interfaces from Figma and Adobe XD designs with React, JavaScript, HTML and CSS.",
+      "Developed reusable UI components and layouts that work consistently across browsers and screen sizes.",
+      "Integrated frontend screens with REST APIs in close collaboration with backend developers and designers.",
     ],
   },
 ];

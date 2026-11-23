@@ -1,7 +1,7 @@
 # Imran Rasheed — Portfolio
 
 A distinctive, production-grade personal portfolio for **Imran Rasheed**, a Full Stack Developer
-with 3+ years of experience building fast, accessible, responsive web applications.
+with 5+ years of experience building fast, accessible, responsive web applications.
 
 Built with **Next.js**, **Three.js** (React Three Fiber) and **Tailwind CSS**: a dark, studio-style showcase with a
 real-time 3D laptop + phone in the hero that cycles through live project screenshots, 3D-tilt device mockups

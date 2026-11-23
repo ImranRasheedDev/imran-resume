@@ -67,7 +67,7 @@ export default function Home() {
 
             <p className="fade-up mt-6 flex flex-wrap items-baseline gap-x-3 text-2xl short:mt-3 short:text-xl sm:text-3xl squat:mt-2 squat:text-lg squat:sm:mt-2 squat:sm:text-lg" style={d(450)}>
               <span className="font-serif italic text-ember-soft">Full Stack Developer</span>
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-bone-faint squat:hidden">3+ yrs · Next.js · React · Node.js</span>
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-bone-faint squat:hidden">5+ yrs · Next.js · React · Node.js</span>
             </p>
 
             <p className="fade-up mt-5 max-w-lg text-[15px] leading-relaxed short:mt-3 short:text-sm sm:mt-6 squat:mt-2 squat:text-[13px] squat:leading-snug squat:sm:mt-2 squat:sm:text-[13px] sm:text-lg text-bone-dim" style={d(560)}>
@@ -272,14 +272,19 @@ export default function Home() {
             </div>
             <div className="reveal lg:col-span-6 lg:col-start-7" style={d(120)}>
               <p className="text-lg leading-relaxed text-bone-dim">
-                I&apos;m a Full Stack Developer with <span className="text-bone">3+ years</span> of experience building
-                responsive web applications. I work mostly in the <span className="text-bone">React and Next.js</span>{" "}
-                ecosystem and handle the whole build, from turning Figma and Adobe XD designs into production-ready UI to
-                wiring up the server logic and APIs behind it.
+                I&apos;m a Full Stack Developer with <span className="text-bone">5+ years</span> of experience. I started
+                as a <span className="text-bone">Frontend Developer</span> at Quadtech Technologies, turning Figma and
+                Adobe XD designs into responsive React interfaces.
               </p>
               <p className="mt-5 text-lg leading-relaxed text-bone-dim">
-                I pay attention to performance, accessibility and the small interactions that make a product feel
-                considered. I work closely with designers and project managers so what ships meets the business goal.
+                Since 2022 I&apos;ve worked full stack at <span className="text-bone">Hashone Digital</span>, building
+                the whole product with <span className="text-bone">Next.js, React and Node.js</span>: the UI, the APIs,
+                the database, payments and real-time features.
+              </p>
+              <p className="mt-5 text-lg leading-relaxed text-bone-dim">
+                I also ship complete projects through <span className="text-bone">AI engineering with Claude</span>,
+                from spec and plan to build, tests and debugging. Three games and an AI job-application pipeline were
+                built this way.
               </p>
 
               <div className="mt-12 grid grid-cols-3 gap-3 border-t border-line pt-10 sm:gap-8">
@@ -342,16 +347,24 @@ export default function Home() {
             <h2 className="mt-5 font-display text-4xl font-bold tracking-[-0.03em] sm:text-6xl">Where I&apos;ve worked</h2>
           </div>
 
+          <div className="flex flex-col gap-6">
           {EXPERIENCE.map((job) => (
             <div key={job.company} className="reveal grid gap-10 rounded-3xl border border-line bg-ink-2 p-7 sm:p-12 lg:grid-cols-12">
               <div className="lg:col-span-4">
-                <div className="inline-flex items-center gap-2 rounded-full bg-green-400/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-green-300">
-                  <span className="h-1.5 w-1.5 rounded-full bg-green-400" /> Current
-                </div>
+                {job.current ? (
+                  <div className="inline-flex items-center gap-2 rounded-full bg-green-400/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-green-300">
+                    <span className="h-1.5 w-1.5 rounded-full bg-green-400" /> Current
+                  </div>
+                ) : (
+                  <div className="inline-flex items-center gap-2 rounded-full bg-bone/5 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-bone-faint">
+                    <span className="h-1.5 w-1.5 rounded-full bg-bone-faint" /> Previous
+                  </div>
+                )}
                 <div className="mt-5 font-display text-3xl font-bold">{job.company}</div>
                 <div className="mt-2 font-serif text-xl italic text-ember-soft">{job.role}</div>
                 <div className="mt-3 font-mono text-xs text-bone-faint">
-                  {job.period} · {job.place}
+                  {job.period}
+                  {job.place ? ` · ${job.place}` : ""}
                 </div>
               </div>
               <ol className="relative space-y-5 border-l border-line pl-6 lg:col-span-8">
@@ -364,6 +377,7 @@ export default function Home() {
               </ol>
             </div>
           ))}
+          </div>
         </section>
 
         {/* ───────────── CONTACT ───────────── */}
@@ -426,7 +440,6 @@ export default function Home() {
       <footer className="mx-auto max-w-7xl px-5 pb-10 sm:px-8">
         <div className="flex flex-col items-center justify-between gap-4 border-t border-line pt-8 text-xs text-bone-faint sm:flex-row">
           <span>© {new Date().getFullYear()} Imran Rasheed · Full Stack Developer</span>
-          <span>Built with Next.js, Three.js &amp; Tailwind CSS</span>
           <a href="#top" className="-my-3 inline-block py-3 transition-colors hover:text-bone">
             Back to top ↑
           </a>

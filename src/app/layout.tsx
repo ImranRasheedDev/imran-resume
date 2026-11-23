@@ -26,7 +26,7 @@ const mono = Geist_Mono({
 });
 
 const description =
-  "Imran Rasheed is a Full Stack Developer with 3+ years of experience building fast, accessible, production web apps with Next.js, React, Node.js and Tailwind CSS.";
+  "Imran Rasheed is a Full Stack Developer with 5+ years of experience building fast, accessible, production web apps with Next.js, React, Node.js and Tailwind CSS.";
 
 export const metadata: Metadata = {
   title: "Imran Rasheed · Full Stack Developer",
